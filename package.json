@@ -27,6 +27,6 @@
     "test:watch": "playwright test",
     "storybook": "start-storybook -p 6006 --quiet --ci",
     "build-storybook": "build-storybook",
-    "gh": "npm run build-storybook && gh-pages -d storybook-static"
+    "gh": "build-storybook && gh-pages -d storybook-static"
   }
 }

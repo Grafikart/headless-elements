@@ -12,7 +12,7 @@ const config: PlaywrightTestConfig = {
 
   webServer: {
     command: "npm run storybook",
-    timeout: 10_000,
+    timeout: 20_000,
     reuseExistingServer: !process.env.CI,
     url: "http://localhost:6006/iframe.html",
   },

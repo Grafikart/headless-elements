@@ -13,7 +13,7 @@
   font-size: 1rem;
 }
 
-.nav-pills > *[aria-selected='true'] {
+.nav-pills > *[aria-selected="true"] {
   background: var(--accent);
   color: #fff;
 }

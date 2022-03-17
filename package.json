@@ -1,7 +1,7 @@
 {
   "name": "headless-elements",
-  "version": "0.0.1",
-  "description": "Library of unopinionated components",
+  "version": "0.0.2",
+  "description": "Library of generic custom elements",
   "main": "src/index.js",
   "author": "jonathan",
   "license": "MIT",

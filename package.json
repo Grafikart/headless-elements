@@ -1,6 +1,6 @@
 {
-  "name": "@sb-elements/all",
-  "version": "0.3.4",
+  "name": "headless-elements",
+  "version": "0.0.1",
   "description": "Library of unopinionated components",
   "main": "src/index.js",
   "author": "jonathan",
@@ -21,8 +21,8 @@
   },
   "scripts": {
     "serve": "http-server ./src -p 8080",
-    "format": "prettier-standard  'src/**/*.{js,css,html}' --format",
-    "lint": "prettier-standard  'src/**/*.{js,css,html}' --lint",
+    "format": "prettier  'src/**/*.{js,css,html}' --format --write",
+    "lint": "prettier  'src/**/*.{js,css,html}' --lint",
     "test": "playwright test",
     "test:watch": "playwright test",
     "storybook": "start-storybook -p 6006 --quiet --ci",

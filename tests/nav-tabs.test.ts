@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { getListenersFor, gotoStory, loadStory } from "./utils";
 
-test.describe.only("<nav-tabs />", () => {
+test.describe("<nav-tabs />", () => {
   test.describe("Tabs with links", () => {
     loadStory("nav-tabs");
 

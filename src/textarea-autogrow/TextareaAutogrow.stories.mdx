@@ -4,13 +4,17 @@ import './story.css'
 
 <Meta title="Elements/textarea-autogrow" id="textarea-autogrow" />
 
-# textarea-autogrow
+# Autosizing textarea `is="textarea-autogrow"`
 
 This textarea will autogrow if the content overflow the initial height (it's triggered on focus)
+
+## Usage
 
 ```html
 <textarea name="content" id="content" is="textarea-autogrow">A long text here</textarea>
 ```
+
+## Demo
 
 export const Template = ({ label, ...args }) => {
   try {

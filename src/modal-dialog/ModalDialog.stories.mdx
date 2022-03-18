@@ -59,7 +59,7 @@ export const Template = ({ label, overlayClose = true }) => {
   overlayClose: {name: 'overlay-close', control: 'boolean', default: true}
 }}/>
 
-# modal-dialog
+# Modal dialog `<modal-dialog>`
 
 ### Usage
 
@@ -79,7 +79,13 @@ Every element with `data-dismiss` will automatically close the modal
 | Attribute       | Type     | Description                                          |
 |-----------------|----------|------------------------------------------------------|
 | overlay-close   | boolean  | Hide the modal when you click on the overlay         |
-| hidden          | boolean  | Visibility
+| hidden          | boolean  | Visibility                                           |
+
+### Events
+
+| Attribute       | Description                                          |
+|-----------------|------------------------------------------------------|
+| close           | Called when modal is closed                          |
 
 ### Demo
 

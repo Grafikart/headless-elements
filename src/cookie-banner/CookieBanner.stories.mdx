@@ -11,7 +11,7 @@ import "./story.css";
 
 This component displays a cookie banner and emit events when the cookie is accepted or refused.
 
-### Usage
+## Usage
 
 You can have a simple accept / reject cookie banner
 
@@ -40,6 +40,15 @@ Or you can use a form for multi level cookie acceptance. The FormData will be st
   </form>
 </cookie-banner>
 ```
+
+## Events
+
+| Attribute       | Description                      | detail                        |
+|-----------------|----------------------------------|-------------------------------|
+| reject          | Called on cookie rejection       |                               |
+| accept          | Called when cookie is accepted   | An object with the form data  |
+
+## Demo
 
 export const Template = ({ label, ...args }) => {
   try {

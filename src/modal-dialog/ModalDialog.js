@@ -2,7 +2,11 @@
  * @property {Element|null} previouslyFocusedElement Element focused before the opening of the modal
  * @property {array<HTMLDivElement>} trapElements
  */
-export default class ModalDialog extends HTMLElement {
+export class ModalDialog extends HTMLElement {
+  static register() {
+    customElements.define("modal-dialog", ModalDialog);
+  }
+
   static get observedAttributes() {
     return ["hidden"];
   }
@@ -115,8 +119,4 @@ export default class ModalDialog extends HTMLElement {
       return rect.width > 0 && rect.height > 0;
     });
   }
-}
-
-if (window.autoDefineComponent !== undefined) {
-  customElements.define("modal-dialog", ModalDialog);
 }

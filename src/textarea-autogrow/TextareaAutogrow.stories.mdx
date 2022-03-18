@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import TextareaAutogrow from './index';
+import { TextareaAutogrow } from './TextareaAutogrow';
 import './story.css'
 
 <Meta title="Elements/textarea-autogrow" id="textarea-autogrow" />
@@ -14,7 +14,7 @@ This textarea will autogrow if the content overflow the initial height (it's tri
 
 export const Template = ({ label, ...args }) => {
   try {
-    customElements.define('textarea-autogrow', TextareaAutogrow, { extends: 'textarea' })
+    TextareaAutogrow.register()
   } catch (e) {
     // do nothing this is custom elements
   }

@@ -1,6 +1,11 @@
 import { debounce } from "../utils/time.js";
 
-export default class Autogrow extends HTMLTextAreaElement {
+export class TextareaAutogrow extends HTMLTextAreaElement {
+  static register() {
+    customElements.define("textarea-autogrow", TextareaAutogrow, {
+      extends: "textarea",
+    });
+  }
   autogrow() {
     const previousHeight = this.style.height;
     this.style.height = "auto";
@@ -43,8 +48,4 @@ export default class Autogrow extends HTMLTextAreaElement {
     this.onResize = debounce(this.onResize.bind(this), 300);
     this.onFocus = this.onFocus.bind(this);
   }
-}
-
-if (window.autoDefineComponent !== undefined) {
-  customElements.define("textarea-autogrow", Autogrow, { extends: "textarea" });
 }

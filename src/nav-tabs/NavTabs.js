@@ -1,4 +1,8 @@
-export default class Tabs extends HTMLElement {
+export class NavTabs extends HTMLElement {
+  static register() {
+    customElements.define("nav-tabs", NavTabs);
+  }
+
   constructor() {
     super();
     this.onHashChange = this.onHashChange.bind(this);
@@ -114,7 +118,4 @@ export default class Tabs extends HTMLElement {
       window.history.replaceState({}, "", "#" + id);
     }
   }
-}
-if (window.autoDefineComponent !== undefined) {
-  customElements.define("nav-tabs", Tabs);
 }

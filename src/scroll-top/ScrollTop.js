@@ -3,7 +3,11 @@ import { throttle } from "../utils/time.js";
 /**
  * This is some informations
  */
-export default class ScrollTop extends HTMLElement {
+export class ScrollTop extends HTMLElement {
+  static register() {
+    customElements.define("scroll-top", ScrollTop);
+  }
+
   constructor() {
     super();
     this.onScroll = throttle(this.onScroll.bind(this), 100);
@@ -35,6 +39,6 @@ export default class ScrollTop extends HTMLElement {
     }
   }
 }
+
 if (window.autoDefineComponent !== undefined) {
-  customElements.define("scroll-top", ScrollTop);
 }

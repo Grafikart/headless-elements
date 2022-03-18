@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import NavTabs from './index';
+import { NavTabs } from './NavTabs';
 import './story.css'
 
 <Meta title="Elements/nav-tabs" id="nav-tabs" argTypes={{
@@ -26,7 +26,7 @@ You can use regular links (with anchors) to control what element to display
 export const Template = ({ label, button = false }) => {
   const suffix = button ? 'button' : 'link';
   try {
-    customElements.define('nav-tabs', NavTabs)
+    NavTabs.register()
   } catch (e) {
     // do nothing this is custom elements
   }

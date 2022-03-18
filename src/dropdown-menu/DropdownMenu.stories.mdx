@@ -1,5 +1,5 @@
 import {Meta, Story, Canvas, ArgsTable} from '@storybook/addon-docs/blocks';
-import {DropdownMenu, DropdownMenuContent} from './index';
+import {DropdownMenu} from './DropdownMenu';
 import './story.css'
 
 <Meta title="Elements/dropdown-menu" id="dropdown-menu" argTypes={{
@@ -7,10 +7,28 @@ import './story.css'
   onReject: {action: 'onReject'},
 }}/>
 
+# Dropdown menu elements `<dropdown-menu>`
+
+This component displays an accessible dropdown menu following the W3 recommandations.
+
+## Usage
+
+After registering the component you have to follow a specific structure
+
+```html
+<dropdown-menu>
+  <button id="menu">Show more information</button>
+  <dropdown-menu-content hidden>
+    <!-- Your list of link or any arbitrary HTML -->
+  </dropdown-menu-content>
+</dropdown-menu>
+```
+
+## Demo
+
 export const Template = ({label, ...args}) => {
   try {
-    customElements.define('dropdown-menu', DropdownMenu)
-    customElements.define('dropdown-menu-content', DropdownMenuContent)
+    DropdownMenu.register();
   } catch (e) {
     // do nothing this is custom elements
   }

@@ -26,6 +26,6 @@ test.describe('is="textarea-autogrow"', () => {
     await page.keyboard.up("Control");
     await page.keyboard.up("Backspace");
     await page.keyboard.type("Hello world");
-    expect(await textareaHeight(page)).toBeLessThan(height);
+    expect(await textareaHeight(page)).toBeLessThanOrEqual(height);
   });
 });

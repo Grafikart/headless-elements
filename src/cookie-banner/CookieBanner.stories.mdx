@@ -1,7 +1,6 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import ScrollTop from './index';
-import './story.css'
-import CookieBanner from './index'
+import { Canvas, Meta, Story } from "@storybook/addon-docs/blocks";
+import { CookieBanner } from "./CookieBanner";
+import "./story.css";
 
 <Meta title="Elements/cookie-banner" id="cookie-banner" argTypes={{
   onAccept: { action: 'onAccept' },
@@ -44,7 +43,7 @@ Or you can use a form for multi level cookie acceptance. The FormData will be st
 
 export const Template = ({ label, ...args }) => {
   try {
-    customElements.define('cookie-banner', CookieBanner)
+    CookieBanner.register()
   } catch (e) {
     // do nothing this is custom elements
   }

@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "author": "jonathan",
   "license": "MIT",
+  "types": "src/index.d.ts",
   "files": [
     "src/**/*.js"
   ],

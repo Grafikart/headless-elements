@@ -1,5 +1,5 @@
 /**
- * Bind an eventlistener on multiple elements
+ * Bind an event listener on multiple elements
  *
  * @param {NodeListOf<HTMLElement>} elements
  * @param {string} elements
@@ -36,7 +36,15 @@ function readCookie() {
   return null;
 }
 
-export default class CookieBanner extends HTMLElement {
+export class CookieBanner extends HTMLElement {
+  static cookieName = "cookieConsent";
+  static expires = 31104000000;
+  static path = "/";
+
+  static register() {
+    customElements.define("cookie-banner", CookieBanner);
+  }
+
   connectedCallback() {
     if (readCookie() !== null) {
       if (this.parentElement) {
@@ -123,12 +131,4 @@ export default class CookieBanner extends HTMLElement {
     }
     return cookie;
   }
-}
-
-CookieBanner.cookieName = "cookieConsent";
-CookieBanner.expires = 31104000000;
-CookieBanner.path = "/";
-
-if (window.autoDefineComponent !== undefined) {
-  customElements.define("cookie-banner", CookieBanner);
 }

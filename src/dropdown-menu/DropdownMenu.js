@@ -10,6 +10,11 @@ import { focusableElements } from "../utils/dom";
  * @property {DropdownMenuContent} content
  */
 export class DropdownMenu extends HTMLElement {
+  static register() {
+    customElements.define("dropdown-menu", DropdownMenu);
+    customElements.define("dropdown-menu-content", DropdownMenuContent);
+  }
+
   connectedCallback() {
     this.content = this.querySelector("dropdown-menu-content");
     this.button = this.firstElementChild;
@@ -89,7 +94,7 @@ export class DropdownMenu extends HTMLElement {
  * @property {HTMLElement[]} focusableElements
  * @property {DropdownMenu} parentElement
  */
-export class DropdownMenuContent extends HTMLElement {
+class DropdownMenuContent extends HTMLElement {
   static get observedAttributes() {
     return ["hidden"];
   }
@@ -211,9 +216,4 @@ export class DropdownMenuContent extends HTMLElement {
       this.parentElement.close();
     }
   };
-}
-
-if (window.autoDefineComponent !== undefined) {
-  customElements.define("dropdown-menu", DropdownMenu);
-  customElements.define("dropdown-menu-content", DropdownMenuContent);
 }

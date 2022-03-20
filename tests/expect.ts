@@ -26,7 +26,7 @@ expect.extend({
     );
     const hidden = await received.evaluate((el: HTMLElement) => {
       return (
-        ["hidden", ""].includes(el.getAttribute("hidden")) ||
+        el.hasAttribute("hidden") &&
         el.getAttribute("aria-hidden") === "true"
       );
     });

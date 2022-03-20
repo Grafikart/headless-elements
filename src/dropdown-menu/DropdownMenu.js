@@ -67,6 +67,7 @@ export class DropdownMenu extends HTMLElement {
    */
   open(options = {}) {
     this.content.removeAttribute("hidden");
+    this.content.setAttribute("aria-hidden", "false");
     this.button.setAttribute("aria-expanded", "true");
     if (options.focusFirst) {
       this.content.focusFirstElement();
@@ -77,6 +78,7 @@ export class DropdownMenu extends HTMLElement {
 
   close() {
     this.content.setAttribute("hidden", "hidden");
+    this.content.setAttribute("aria-hidden", "true");
     this.button.setAttribute("aria-expanded", "false");
   }
 
